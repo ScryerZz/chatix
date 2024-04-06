@@ -119,7 +119,7 @@
             </Button.Triggers>
         </Button>
 
-        <Button x:Name="Exit" Content="EXIT OUT CHATIX" Height="150" Width="600" Grid.Row="5" Grid.Column="1" FontFamily="Diablo" FontSize="75" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="Exit_Click" BorderBrush="{x:Null}" Background="{x:Null}" Style="{StaticResource ButtonStyle}">
+        <Button x:Name="Exit" Content="EXIT OUT CHATIX" Height="150" Width="600" Grid.Row="5" Grid.Column="1" FontSize="75" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="Exit_Click" BorderBrush="{x:Null}" Background="{x:Null}" Style="{StaticResource ButtonStyle}">
             <Button.RenderTransform>
                 <ScaleTransform ScaleX="1" ScaleY="1" CenterX="300" CenterY="75"/>
             </Button.RenderTransform>

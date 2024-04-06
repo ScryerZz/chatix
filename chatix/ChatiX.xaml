@@ -46,9 +46,8 @@
         </Style>
     </Page.Resources>
 
-    <Grid x:Name="MainGrid" Background="#FF161616">
+    <Grid x:Name="MainGrid"  Background="#FF161616">
         <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
@@ -60,7 +59,161 @@
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
+        <Label Content="Client log:" Height="90" Width="384" FontSize="64" FontStyle="Italic" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Top" HorizontalContentAlignment="Left" VerticalContentAlignment="Bottom" Margin="0,135,0,0" BorderBrush="{x:Null}" Grid.RowSpan="2">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF3394FF"/>
+                    <GradientStop Color="#FF6D26DA" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <ListBox x:Name="ClientLog" Height="540" Width="1536" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="8" Grid.RowSpan="4" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Visible" BorderBrush="#FF3394FF" Margin="0,45,0,0" Background="Transparent" BorderThickness="2,2,2,2">
+            <ListBox.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF3394FF"/>
+                    <GradientStop Color="#FF6D26DA" Offset="1"/>
+                </LinearGradientBrush>
+            </ListBox.Foreground>
+        </ListBox>
+
+        <Label Content="Number of &#xD;&#xA;messages:" Height="70" Width="192" FontSize="25" FontStyle="Italic" Grid.Column="7" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Margin="57,155,0,0" BorderBrush="{x:Null}" Grid.ColumnSpan="2" Grid.RowSpan="2">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF3394FF"/>
+                    <GradientStop Color="#FF6D26DA" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Label Content="In:" Height="35" Width="45" FontSize="25" FontStyle="Italic" Grid.Column="8" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Margin="82,155,0,0" BorderBrush="{x:Null}" Grid.RowSpan="2">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF3394FF"/>
+                    <GradientStop Color="#FF6D26DA" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <TextBlock x:Name="countin" Text="0" Height="35" Width="65" TextWrapping="Wrap" FontSize="32" FontStyle="Italic" Grid.Column="8" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="127,155,0,0" Grid.RowSpan="2">
+            <TextBlock.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF3394FF"/>
+                    <GradientStop Color="#FF6D26DA" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBlock.Foreground>
+        </TextBlock>
+        <Label Content="Out:&#xD;&#xA;" Height="35" Width="70" FontSize="25" FontStyle="Italic" Grid.Column="8" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Margin="57,10,0,0" BorderBrush="{x:Null}" Grid.Row="1">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF3394FF"/>
+                    <GradientStop Color="#FF6D26DA" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <TextBlock x:Name="countout" Text="0" Height="35" Width="65" TextWrapping="Wrap" FontSize="32" FontStyle="Italic" Grid.Column="8" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="127,10,0,0" Grid.Row="1">
+            <TextBlock.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF3394FF"/>
+                    <GradientStop Color="#FF6D26DA" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBlock.Foreground>
+        </TextBlock>
+
+        <Label Content="Name:" Height="50" Width="192" FontSize="32" FontStyle="Italic" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,85,0,0">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF3394FF"/>
+                    <GradientStop Color="#FF6D26DA" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <TextBox x:Name="Name" TextWrapping="Wrap" Height="50" Width="192" FontSize="24" FontWeight="Bold" Grid.Column="2" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,85,0,0" BorderBrush="#FF3394FF" Background="#02FFFFFF" BorderThickness="3,3,3,3">
+            <TextBox.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF3394FF"/>
+                    <GradientStop Color="#FF6D26DA" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.Foreground>
+        </TextBox>
+
+        <Button x:Name="Connect" Content="Connect" Height="50" Width="192" FontSize="30" FontWeight="Bold" Grid.Column="7" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,85,0,0" Click="Connect_Click" BorderBrush="{x:Null}" Background="{x:Null}" Style="{StaticResource ButtonStyle}"/>
+        <Button x:Name="Disconnect" Content="Disconnect" Height="50" Width="192" FontSize="30" FontWeight="Bold" Grid.Column="8" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,85,0,0" Click="Disconnect_Click" BorderBrush="{x:Null}" Background="{x:Null}" Style="{StaticResource ButtonStyle}"/>
+
+        <Label Content="Message:&#xD;&#xA;" Height="50" Width="192" FontSize="30" FontStyle="Italic" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,175,0,0" Grid.RowSpan="2">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF3394FF"/>
+                    <GradientStop Color="#FF6D26DA" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <TextBox x:Name="Message" TextWrapping="Wrap" Height="50" Width="1344" FontSize="24" FontWeight="Bold" Grid.Column="2" Grid.Row="4" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,175,0,0" BorderBrush="#FF3394FF" Grid.RowSpan="2" Grid.ColumnSpan="7" Background="Transparent" BorderThickness="3,3,3,3">
+            <TextBox.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF3394FF"/>
+                    <GradientStop Color="#FF6D26DA" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.Foreground>
+        </TextBox>
+        <Button x:Name="Send" Content="Send" Height="50" Width="384" FontSize="45" FontWeight="Bold" Grid.Column="4" Grid.Row="4" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,85,0,0" Click="Send_Click" BorderBrush="{x:Null}" Background="{x:Null}" Style="{StaticResource ButtonStyle}"/>
+
+        <Button x:Name="Back" Content="↞" Height="108" Width="100" FontSize="75" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="Back_Click" BorderBrush="{x:Null}" Background="{x:Null}" Style="{StaticResource ButtonStyle}" FontWeight="Bold" Margin="10,0,0,0">
+            <Button.RenderTransform>
+                <ScaleTransform ScaleX="1" ScaleY="1" CenterX="300" CenterY="75"/>
+            </Button.RenderTransform>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Button.Click">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX" To="0.88"
+                                                         Duration="0:0:0.35">
+                                    <DoubleAnimation.EasingFunction>
+                                        <ElasticEase EasingMode="EaseOut" Oscillations="1"></ElasticEase>
+                                    </DoubleAnimation.EasingFunction>
+                                </DoubleAnimation>
+                                <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY" To="0.88"
+                                                         Duration="0:0:0.35" Completed="DoubleAnimation_Completed_Back">
+                                    <DoubleAnimation.EasingFunction>
+                                        <ElasticEase EasingMode="EaseOut" Oscillations="1"></ElasticEase>
+                                    </DoubleAnimation.EasingFunction>
+                                </DoubleAnimation>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="Button.MouseLeave">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX"
+                                                         Duration="0:0:0.35">
+                                    <DoubleAnimation.EasingFunction>
+                                        <ElasticEase EasingMode="EaseOut" Oscillations="1"></ElasticEase>
+                                    </DoubleAnimation.EasingFunction>
+                                </DoubleAnimation>
+                                <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY"
+                                                         Duration="0:0:0.35">
+                                    <DoubleAnimation.EasingFunction>
+                                        <ElasticEase EasingMode="EaseOut" Oscillations="1"></ElasticEase>
+                                    </DoubleAnimation.EasingFunction>
+                                </DoubleAnimation>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+
+        <!--<Border Height="900" Width="1728" Grid.ColumnSpan="10" Grid.RowSpan="6" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="96,90,0,0" BorderThickness="3" BorderBrush="#FF6D26DA"/>-->
+
+        <!--<Button x:Name="Conect" Content="CONNECT" Height="150" Width="600" Grid.Row="4" FontSize="75" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="Connect_Click" BorderBrush="{x:Null}" Background="{x:Null}" Style="{StaticResource ButtonStyle}" Grid.ColumnSpan="2" Margin="0,66,0,0"/>-->
     </Grid>
 </Page>
