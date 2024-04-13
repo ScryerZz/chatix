@@ -27,7 +27,6 @@ namespace chatix
         int outmessage = 0;
         int inmessage = 0;
 
-        string userName = "";
         string host = "217.66.19.16";
         int port = 935;
 
@@ -45,7 +44,7 @@ namespace chatix
             {
                 client = new TcpClient(host, port);
                 stream = client.GetStream();
-                Dispatcher.BeginInvoke(new Action(() => ClientLog.Items.Add("The connection is established.")));
+                Dispatcher.BeginInvoke(new Action(() => ClientLog.Items.Add("Соединение установлено.")));
             }
             catch (Exception ex)
             {
@@ -74,7 +73,7 @@ namespace chatix
                     }
                     while (stream.DataAvailable);
                     string message = builder.ToString();
-                    Dispatcher.BeginInvoke(new Action(() => ClientLog.Items.Add("Server: " + message)));
+                    Dispatcher.BeginInvoke(new Action(() => ClientLog.Items.Add("Сервер: " + message)));
                     Dispatcher.BeginInvoke(new Action(() => CountIn()));
                 }
             }
@@ -101,8 +100,9 @@ namespace chatix
             {
                 stream.Write(data, 0, data.Length);
                 countout.Text = Convert.ToString(outmessage = outmessage + 1);
+                Dispatcher.BeginInvoke(new Action(() => ClientLog.Items.Add(message)));
             }
-            else Dispatcher.BeginInvoke(new Action(() => ClientLog.Items.Add("The connection was not established.")));
+            else Dispatcher.BeginInvoke(new Action(() => ClientLog.Items.Add("Соединение не было установлено.")));
         }
 
         void CountIn()
@@ -118,9 +118,9 @@ namespace chatix
                 stream.Close();
                 client.Close();
                 client.Dispose();
-                ClientLog.Items.Add("Сonnection closed.");
+                ClientLog.Items.Add("Соединение закрыто.");
             }
-            else Dispatcher.BeginInvoke(new Action(() => ClientLog.Items.Add("The connection was not established.")));
+            else Dispatcher.BeginInvoke(new Action(() => ClientLog.Items.Add("Соединение не было установлено.")));
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)

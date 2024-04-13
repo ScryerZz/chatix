@@ -134,7 +134,7 @@
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
-        <TextBox x:Name="Name" TextWrapping="Wrap" Height="50" Width="192" FontSize="24" FontWeight="Bold" Grid.Column="2" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,85,0,0" BorderBrush="#FF3394FF" Background="#02FFFFFF" BorderThickness="3,3,3,3">
+        <TextBox x:Name="Name" TextWrapping="Wrap" Height="50" Width="192" FontSize="24" FontWeight="Bold" Grid.Column="2" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Top" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="0,85,0,0" BorderBrush="#FF3394FF" Background="#02FFFFFF" BorderThickness="3,3,3,3">
             <TextBox.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF3394FF"/>
@@ -154,7 +154,7 @@
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
-        <TextBox x:Name="Message" TextWrapping="Wrap" Height="50" Width="1344" FontSize="24" FontWeight="Bold" Grid.Column="2" Grid.Row="4" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,175,0,0" BorderBrush="#FF3394FF" Grid.RowSpan="2" Grid.ColumnSpan="7" Background="Transparent" BorderThickness="3,3,3,3">
+        <TextBox x:Name="Message" TextWrapping="Wrap" Height="50" Width="1344" FontSize="24" FontWeight="Bold" Grid.Column="2" Grid.Row="4" HorizontalAlignment="Right" VerticalAlignment="Top" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="0,175,0,0" BorderBrush="#FF3394FF" Grid.RowSpan="2" Grid.ColumnSpan="7" Background="Transparent" BorderThickness="3,3,3,3">
             <TextBox.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF3394FF"/>
